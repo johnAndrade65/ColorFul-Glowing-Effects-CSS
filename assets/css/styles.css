@@ -1,0 +1,133 @@
+/*==FONT IMPORT==*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap');
+
+/*==GENERAL STYLIZATION==*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html, body{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background: #000;
+}
+
+/*==HEADER==*/
+header{
+    text-align: center;
+}
+header h1{
+    color: #fff;
+    position: relative;
+    top: 40px;
+    font-size: 65px;
+}
+
+/*==CONTAINER==*/
+.center{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+/*==ITEMS==*/
+.outer{
+    position: relative;
+    bottom: 70px;
+    margin: 0 50px;
+    background: #111;
+}
+.button{
+    height: 70px;
+    width: 220px;
+    border-radius: 50px;
+}
+.circle{
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+}
+.outer button, .outer span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
+}
+.outer button{
+    background: #111;
+    color: #f2f2f2;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 9;
+}
+.button button{
+    height: 60px;
+    width: 210px;
+    border-radius: 50px;
+}
+.circle button{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+.outer span{
+    height: 100%;
+    width: 100%;
+    background: inherit;
+}
+.button span{
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+.circle span{
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+/*==HOVER ITEMS WITH EFFECTS==*/
+.outer:hover span:nth-child(1){
+    filter: blur(7px);
+}
+.outer:hover span:nth-child(2){
+    filter: blur(14px);
+}
+.outer:hover{
+    animation: rotate 1.5s linear infinite;
+    background: linear-gradient(#14ffe9,#ffeb3b,#ff00e0);
+}
+
+/*==ANIMATIONS==*/
+@keyframes rotate{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+/*==SCREEN ADJUSTMENT==*/
+@media (max-width: 640px){
+    header h1{
+        position: relative;
+        top: 40px;
+        font-size: 40px;
+    }
+    .center{
+        position: relative;
+        top: 80px;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .outer{
+        margin: 50px 0;
+    }
+}
